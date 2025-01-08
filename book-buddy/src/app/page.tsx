@@ -58,7 +58,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center item-center mt-6">
             <div className="relative w-1/2">
-              <span className="absolute inset-y-0 left-3 flex items-center">
+              <span>
                 <Image
                   className="h-6 w-6"
                   src="/searchicon.jpg"
