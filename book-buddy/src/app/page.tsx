@@ -48,20 +48,32 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="px-6 py-10">
+      <main className="px-6 py-10 ">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-[#584A31]">Find Books</h1>
-          <p className="text-[#B27F50]">
+          <p className="text-[#B27F50] text-xs font-bold ">BookBuddy</p>
+          <h1 className="text-3xl font-bold text-[#584A31] py-3">Find Books</h1>
+          <p className="text-[#B27F50] text-sm">
             Enter the name of any book or a description to find book
             recommendations
           </p>
-          <div className="mt-6">
-            <input
-              type="text"
-              placeholder="Search"
-              className="border bg-[#AB8154] text-white  rounded-l px-4 py-2 w-1/2"
-              onKeyDown={processSearch}
-            />
+          <div className="flex justify-center item-center mt-6">
+            <div className="relative w-1/2">
+              <span className="absolute inset-y-0 left-3 flex items-center">
+                <Image
+                  className="h-6 w-6"
+                  src="/searchicon.jpg"
+                  alt="Search Icon"
+                  width={20}
+                  height={20}
+                />
+              </span>
+              <input
+                type="text"
+                placeholder="Search"
+                className="border border-white bg-[#AB8154] text-white   rounded-lg px-4 py-2 w-full pl-10"
+                onKeyDown={processSearch}
+              />
+            </div>
           </div>
         </div>
 
