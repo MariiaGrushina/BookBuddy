@@ -6,11 +6,15 @@ export default function MyList() {
       {/* Header */}
       <header className="bg-orange-300 flex justify-between items-center px-6 py-4">
         <div className="flex items-center">
-          <div className="bg-white rounded-full w-10 h-10 flex justify-center items-center">
-            <a href="/">
-              <span className="font-bold text-orange-500">BB</span>
-            </a>
-          </div>
+          <a href="/">
+            <Image
+              className="rounded-full"
+              src="/bookbuddy.jpg"
+              alt="BookBuddy Logo"
+              width={40}
+              height={60}
+            />
+          </a>
         </div>
         <nav className="flex space-x-4">
           <a href="/my-list" className="text-white">
