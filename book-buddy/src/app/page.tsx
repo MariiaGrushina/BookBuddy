@@ -1,10 +1,28 @@
+"use client";
+
 import Image from "next/image";
+import { useState, KeyboardEvent } from "react";
 
 export default function Home() {
+  const [query, setQuery] = useState("");
+
+  const processSearch = (event: KeyboardEvent<HTMLInputElement>): void => {
+    if (event.key === "Enter") {
+      const inputValue = (event.target as HTMLInputElement).value.trim();
+      if (inputValue) {
+        console.log("Search query:", inputValue);
+        setQuery(inputValue);
+        // Perform the search logic here (e.g., make an API call)
+      } else {
+        console.log("Please enter a valid search query.");
+      }
+    }
+  };
+
   return (
-    <div className="bg-orange-100 min-h-screen">
+    <div className="bg-[#ffc97e] min-h-screen">
       {/* Header */}
-      <header className="bg-orange-300 flex justify-between items-center px-6 py-4">
+      <header className="bg-[#ab8154] flex justify-between items-center px-6 py-4">
         <div className="flex items-center">
           <a href="/">
             <Image
@@ -32,8 +50,8 @@ export default function Home() {
       {/* Main Content */}
       <main className="px-6 py-10">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-orange-600">Find Books</h1>
-          <p className="text-gray-700">
+          <h1 className="text-3xl font-bold text-[#584A31]">Find Books</h1>
+          <p className="text-[#B27F50]">
             Enter the name of any book or a description to find book
             recommendations
           </p>
@@ -41,15 +59,16 @@ export default function Home() {
             <input
               type="text"
               placeholder="Search"
-              className="border border-gray-300 rounded-l px-4 py-2 w-1/2"
+              className="border bg-[#AB8154] text-white  rounded-l px-4 py-2 w-1/2"
+              onKeyDown={processSearch}
             />
-            <button className="bg-orange-500 text-white px-4 py-2 rounded-r">
-              Search
-            </button>
           </div>
         </div>
 
         {/* Book Cards */}
+        {/* TODO: Ensure that only six cards are displayed at a time, include 
+                  a way to navigate between every six books */}
+        {/* Stretch Goal: Make the search bar sticky */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
           {/* Card 1 */}
           <div className="bg-white shadow-md rounded-md overflow-hidden">
