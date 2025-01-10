@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import BookCard from "@/components/BookCard";
+import LoadMoreItems from "@/components/LoadMoreItems";
 import { useState, KeyboardEvent } from "react";
 
 export default function Home() {
@@ -75,8 +77,10 @@ export default function Home() {
         {/* TODO: Ensure that only six cards are displayed at a time, include 
                   a way to navigate between every six books */}
         {/* Stretch Goal: Make the search bar sticky */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-          {/* Card 1 */}
+        <div className="mt-10 py-7">
+          <LoadMoreItems />
+          {/* 
+          Card 1
           <div className="bg-white shadow-md rounded-md overflow-hidden">
             <img
               src="/war-and-peace.jpg"
@@ -90,7 +94,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Card 2 */}
+           Card 2
           <div className="bg-white shadow-md rounded-md overflow-hidden">
             <img
               src="/a-court-of-thorns-and-roses.jpg"
@@ -103,8 +107,6 @@ export default function Home() {
               <p className="text-sm text-gray-500">Sarah J. Maas</p>
             </div>
           </div>
-
-          {/* Card 3 */}
           <div className="bg-white shadow-md rounded-md overflow-hidden">
             <img
               src="/flowers-for-algernon.jpg"
@@ -116,7 +118,8 @@ export default function Home() {
               <h2 className="font-bold text-lg">Flowers for Algernon</h2>
               <p className="text-sm text-gray-500">Daniel Keyes</p>
             </div>
-          </div>
+          </div> 
+          */}
         </div>
       </main>
     </div>

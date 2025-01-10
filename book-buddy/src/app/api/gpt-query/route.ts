@@ -20,7 +20,7 @@ export async function POST(request: Request) {
           {
             role: "system",
             content:
-              "You are a book-finding assistant only answers related to books. ",
+              " You are a book-finding assistant who only answers questions related to books. Give me one list that consists of 18 books that are similar to the book provided in terms of plot, main idea, or the author's style, and provide a short overview of each.",
           },
           { role: "user", content: body.query },
         ],
