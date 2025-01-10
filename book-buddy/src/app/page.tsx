@@ -79,47 +79,6 @@ export default function Home() {
         {/* Stretch Goal: Make the search bar sticky */}
         <div className="mt-10 py-7">
           <LoadMoreItems />
-          {/* 
-          Card 1
-          <div className="bg-white shadow-md rounded-md overflow-hidden">
-            <img
-              src="/war-and-peace.jpg"
-              alt="War and Peace"
-              className="w-full h-60 object-cover"
-            />
-            <div className="p-4">
-              <p className="text-sm text-gray-500">Russian Classic</p>
-              <h2 className="font-bold text-lg">War and Peace</h2>
-              <p className="text-sm text-gray-500">Leo Tolstoy</p>
-            </div>
-          </div>
-
-           Card 2
-          <div className="bg-white shadow-md rounded-md overflow-hidden">
-            <img
-              src="/a-court-of-thorns-and-roses.jpg"
-              alt="A Court of Thorns and Roses"
-              className="w-full h-60 object-cover"
-            />
-            <div className="p-4">
-              <p className="text-sm text-gray-500">Romantic Fantasy</p>
-              <h2 className="font-bold text-lg">A Court of Thorns and Roses</h2>
-              <p className="text-sm text-gray-500">Sarah J. Maas</p>
-            </div>
-          </div>
-          <div className="bg-white shadow-md rounded-md overflow-hidden">
-            <img
-              src="/flowers-for-algernon.jpg"
-              alt="Flowers for Algernon"
-              className="w-full h-60 object-cover"
-            />
-            <div className="p-4">
-              <p className="text-sm text-gray-500">Science Fiction</p>
-              <h2 className="font-bold text-lg">Flowers for Algernon</h2>
-              <p className="text-sm text-gray-500">Daniel Keyes</p>
-            </div>
-          </div> 
-          */}
         </div>
       </main>
     </div>
