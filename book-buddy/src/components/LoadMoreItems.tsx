@@ -11,7 +11,8 @@ const LoadMoreItems: React.FC<LoadMoreItemsProps> = ({ books }) => {
       bookName={books[i][0]} // Book name idx
       bookAuthor={books[i][1]} // Book author idx
       genre={books[i][2]} // Book genre idx
-      description={books[i][3]} // Book description idx
+      isbn={books[i][3]} // Book isbn idx
+      description={books[i][4]} // Book description idx
     />
   ));
 
@@ -24,7 +25,7 @@ const LoadMoreItems: React.FC<LoadMoreItemsProps> = ({ books }) => {
   return (
     <div>
       <div>
-        <div className="item-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9">
+        <div className="item-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-9">
           {items.slice(0, visibleItems).map((item, index) => (
             <div key={index} className="item">
               {item}

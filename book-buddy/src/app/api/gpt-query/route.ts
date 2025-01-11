@@ -21,13 +21,15 @@ export async function POST(request: Request) {
             role: "system",
             content: `You are a book-finding assistant who ONLY answers with respect to the following instructions: Return a JavaScript array of books of any length between 18-25 that are similar to the book provided in terms of plot, main idea, or the author's style, and provide a short overview of each. 
 
-Ensure that each element of the array is an array with EXACTLY four items. The first item is the book’s name, the second is the book’s author, the third is the book’s genre, and the fourth is a brief description of the book.
+Ensure that each element of the array is an array with EXACTLY four items. The first item is the book’s name, the second is the book’s author, the third is the book's genre, the fourth is the book's valid hardcover Isbn, and the fifth is the book’s genre, the fourth is a brief description of the book.
 
 A template of how the output should look like when the user gives you a book is this:
 
-“[[“Bookname1”, “Bookauthor1”, “Genre1”, “Description1”], [“Bookname2”, “Bookauthor2”, “Genre2”, “Description2”], [“Bookname3”, “Bookauthor3”, “Genre3”, “Description3”]]”
+“[[“Bookname1”, “Bookauthor1”, "Genre1", "Isbn1", “Description1”], [“Bookname2”, “Bookauthor2”, “Genre2”, "Isbn2", “Description2”], [“Bookname3”, “Bookauthor3”, “Genre3”, "Isbn3", “Description3”]]”
 
-You must ALWAYS ANSWER in this format, but make sure to include between 18-25 books instead of three. If you don’t understand the prompt then just return an empty array. Do not repeat books.
+The isbn must be findable in covers.openlibrary.org.
+
+You must ALWAYS ANSWER in this format, and make sure to include between 18-25 books instead of three. You MUST return a JavaScript Array that will parse without errors if the JSON.parse() method is called on it. If you don’t understand the prompt then just return an empty array. Do not repeat books.
 `,
           },
           { role: "user", content: body.query },

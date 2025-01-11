@@ -6,7 +6,8 @@ import LoadMoreItems from "@/components/LoadMoreItems";
 import { useState, KeyboardEvent } from "react";
 
 export default function Home() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState<string>("");
+  const [loading, setLoading] = useState<Boolean>(false);
   const [response, setResponse] = useState<string[][]>([]);
 
   const processSearch = async (
@@ -16,6 +17,7 @@ export default function Home() {
       const inputValue = (event.target as HTMLInputElement).value.trim();
       if (inputValue) {
         setQuery(inputValue);
+        setLoading(true);
         try {
           const res = await fetch("/api/gpt-query", {
             method: "POST",
@@ -39,6 +41,7 @@ export default function Home() {
       } else {
         console.log("Please enter a valid search query.");
       }
+      setLoading(false);
     }
   };
 
@@ -55,13 +58,29 @@ export default function Home() {
           </p>
           <div className="flex justify-center item-center mt-6">
             <div className="relative w-1/2">
-              <input
-                type="text"
-                placeholder="Search"
-                className="border border-white bg-[#AB8154] text-white rounded-lg px-4 py-2 w-full pl-10 bg-no-repeat bg-[url('/searchicon.jpg')] bg-[length:25px_25px]"
-                style={{ backgroundPosition: "10px 7px" }}
-                onKeyDown={processSearch}
-              />
+              {!loading ? (
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="border border-white bg-[#AB8154] text-white rounded-lg px-4 py-2 w-full pl-10 bg-no-repeat bg-[url('/searchicon.jpg')] bg-[length:25px_25px]"
+                  style={{ backgroundPosition: "10px 7px" }}
+                  onKeyDown={processSearch}
+                />
+              ) : (
+                // Disabled input with loading spinner
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    placeholder="Loading..."
+                    className="border border-white bg-[#AB8154] text-white rounded-lg px-4 py-2 w-full pl-10 cursor-not-allowed"
+                    disabled
+                  />
+                  <div
+                    className="absolute top-2.5 left-3 h-5 w-5 border-2 border-t-transparent border-white rounded-full animate-spin"
+                    style={{ borderWidth: "3px" }}
+                  ></div>
+                </div>
+              )}
             </div>
           </div>
         </div>
