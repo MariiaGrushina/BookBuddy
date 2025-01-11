@@ -51,19 +51,19 @@ export default function Home() {
       <main className="px-6 py-10 ">
         <div className="text-center">
           <p className="text-[#B27F50] text-xs font-bold ">BookBuddy</p>
-          <h1 className="text-3xl font-bold text-[#584A31] py-3">Find Books</h1>
+          <h1 className="text-3xl font-bold text-[#584A31] py-5">Find Books</h1>
           <p className="text-[#B27F50] text-sm">
             Enter the name of any book or a description to find book
             recommendations
           </p>
-          <div className="flex justify-center item-center mt-6">
+          <div className="flex justify-center item-center mt-8">
             <div className="relative w-1/2">
               {!loading ? (
                 <input
                   type="text"
                   placeholder="Search"
                   className="border border-white bg-[#AB8154] text-white rounded-lg px-4 py-2 w-full pl-10 bg-no-repeat bg-[url('/searchicon.jpg')] bg-[length:25px_25px]"
-                  style={{ backgroundPosition: "10px 7px" }}
+                  style={{ backgroundPosition: "10px 7px", outline: "none" }}
                   onKeyDown={processSearch}
                 />
               ) : (
