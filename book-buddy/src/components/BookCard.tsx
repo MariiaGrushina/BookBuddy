@@ -4,9 +4,15 @@ interface BookCardProps {
   bookName: string;
   bookAuthor: string;
   genre: string;
+  description: string;
 }
 
-const BookCard: React.FC<BookCardProps> = ({ bookName, bookAuthor, genre }) => {
+const BookCard: React.FC<BookCardProps> = ({
+  bookName,
+  bookAuthor,
+  genre,
+  description,
+}) => {
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden p-4">
       <img
@@ -17,7 +23,8 @@ const BookCard: React.FC<BookCardProps> = ({ bookName, bookAuthor, genre }) => {
       <div className="p-4">
         <p className="text-sm text-[#8F6A42]">{genre}</p>
         <h2 className="font-bold text-lg text-[#101828]">{bookName}</h2>
-        <p className="text-sm text-[#667085]">{bookAuthor}</p>
+        <p className="font-bold mt-1 text-sm text-[#667085]">{bookAuthor}</p>
+        <p className="mt-2 text-sm text-[#667085]">{description}</p>
       </div>
     </div>
   );

@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import BookCard from "./BookCard";
 
-export default function LoadMoreItems() {
-  const items = Array.from({ length: 18 }, (_, i) => (
+interface LoadMoreItemsProps {
+  books: Array<Array<string>>;
+}
+
+const LoadMoreItems: React.FC<LoadMoreItemsProps> = ({ books }) => {
+  const items = Array.from({ length: books.length }, (_, i) => (
     <BookCard
-      bookName="War and Peace"
-      bookAuthor="Leo Tolstoy"
-      genre="Russian Classic"
+      bookName={books[i][0]} // Book name idx
+      bookAuthor={books[i][1]} // Book author idx
+      genre={books[i][2]} // Book genre idx
+      description={books[i][3]} // Book description idx
     />
   ));
 
@@ -39,4 +44,6 @@ export default function LoadMoreItems() {
       </div>
     </div>
   );
-}
+};
+
+export default LoadMoreItems;

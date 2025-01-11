@@ -7,7 +7,7 @@ import { useState, KeyboardEvent } from "react";
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState<string[][]>([]);
 
   const processSearch = async (
     event: KeyboardEvent<HTMLInputElement>
@@ -15,7 +15,6 @@ export default function Home() {
     if (event.key === "Enter") {
       const inputValue = (event.target as HTMLInputElement).value.trim();
       if (inputValue) {
-        console.log("Search query:", inputValue);
         setQuery(inputValue);
         try {
           const res = await fetch("/api/gpt-query", {
@@ -27,7 +26,9 @@ export default function Home() {
           });
           if (res.ok) {
             const data = await res.json();
-            setResponse(data.response); // Assuming the API returns { response: "Your GPT result" }
+
+            setResponse(JSON.parse(data.response)); // Assuming the API returns { response: "Your GPT result" }
+            console.log(response);
           } else {
             console.error("Error fetching GPT API response:", res.statusText);
           }
@@ -65,20 +66,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Display GPT Response */}
-        {response && (
-          <div className="mt-10">
-            <h2 className="text-xl font-bold text-[#584A31]">GPT Response:</h2>
-            <p className="text-[#584A31] mt-2">{response}</p>
-          </div>
-        )}
-
         {/* Book Cards */}
         {/* TODO: Ensure that only six cards are displayed at a time, include 
                   a way to navigate between every six books */}
         {/* Stretch Goal: Make the search bar sticky */}
         <div className="mt-10 py-7">
-          <LoadMoreItems />
+          <LoadMoreItems books={response} />
         </div>
       </main>
     </div>
