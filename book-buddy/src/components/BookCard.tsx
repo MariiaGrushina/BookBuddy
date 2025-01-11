@@ -1,6 +1,12 @@
 import React from "react";
 
-const BookCard = (bookName: string, bookAuthor: string, genre: string) => {
+interface BookCardProps {
+  bookName: string;
+  bookAuthor: string;
+  genre: string;
+}
+
+const BookCard: React.FC<BookCardProps> = ({ bookName, bookAuthor, genre }) => {
   return (
     <div className="bg-white shadow-md rounded-md overflow-hidden p-4">
       <img

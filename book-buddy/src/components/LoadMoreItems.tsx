@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import BookCard from "./BookCard";
 
-const LoadMoreItems = () => {
-  const items = Array.from({ length: 18 }, (_, i) =>
-    BookCard("War and Peace", "Leo Tolstoy", "Russian Classic")
-  );
+export default function LoadMoreItems() {
+  const items = Array.from({ length: 18 }, (_, i) => (
+    <BookCard
+      bookName="War and Peace"
+      bookAuthor="Leo Tolstoy"
+      genre="Russian Classic"
+    />
+  ));
 
   const [visibleItems, setVisibleItems] = useState(6);
 
@@ -35,6 +39,4 @@ const LoadMoreItems = () => {
       </div>
     </div>
   );
-};
-
-export default LoadMoreItems;
+}
