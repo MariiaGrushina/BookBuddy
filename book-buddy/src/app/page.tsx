@@ -57,7 +57,7 @@ export default function Home() {
                       #ffdfa7 40%, 
                       #ffefd3 40%, 
                       #ffefd3 45%, 
-                      #ffffff 45%
+                      #ffffff 35%
                       )`,
       }}
     >
