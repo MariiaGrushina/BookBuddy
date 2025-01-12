@@ -25,7 +25,6 @@ const BookCard: React.FC<BookCardProps> = ({
       )}+inauthor:${encodeURIComponent(bookAuthor)}&key=${
         process.env.NEXT_PUBLIC_GOOGLE_API_KEY
       }`;
-      console.log("Fetching from URL:", url);
 
       try {
         const response = await fetch(url);
@@ -35,10 +34,10 @@ const BookCard: React.FC<BookCardProps> = ({
             data.items?.[0]?.volumeInfo?.imageLinks?.thumbnail || "";
           setCoverImage(imageUrl);
         } else {
-          console.log("API Error:", data);
+          setCoverImage("");
         }
       } catch (error) {
-        console.log("Error fetching book cover:", error);
+        setCoverImage("");
       }
     };
 

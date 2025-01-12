@@ -66,7 +66,7 @@ export default function Home() {
         <div className="text-center">
           <p className="text-[#B27F50] text-xs font-bold ">BookBuddy</p>
           <h1 className="text-4xl font-bold text-[#584A31] py-5">Find Books</h1>
-          <p className="text-[#B27F50] text-sm">
+          <p className="text-[#B27F50] text-l">
             Enter the name of any book or a description to find book
             recommendations
           </p>
