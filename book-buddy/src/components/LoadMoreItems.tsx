@@ -25,13 +25,20 @@ const LoadMoreItems: React.FC<LoadMoreItemsProps> = ({ books }) => {
   return (
     <div>
       <div>
-        <div className="item-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-9">
-          {items.slice(0, visibleItems).map((item, index) => (
-            <div key={index} className="item">
-              {item}
-            </div>
-          ))}
-        </div>
+        {items.length > 0 ? (
+          <div className="item-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-9">
+            {items.slice(0, visibleItems).map((item, index) => (
+              <div key={index} className="item">
+                {item}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex justify-center text-lg font-bold text-[#584A31]">
+            We couldn't find any books related to this search, maybe try
+            something else?
+          </div>
+        )}
         {visibleItems < items.length && (
           <div className="text-center mt-4">
             <button
