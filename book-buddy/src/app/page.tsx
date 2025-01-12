@@ -46,7 +46,20 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[#ffc97e] min-h-screen">
+    <div
+      className="bg-[#ffc97e] min-h-screen"
+      style={{
+        background: `linear-gradient(
+      170deg, 
+    #ffc97e 45%, 
+    #ffdfa7 45%, 
+    #ffdfa7 50%, 
+    #ffefd3 50%, 
+    #ffefd3 55%, 
+    #ffffff 55%
+    )`,
+      }}
+    >
       {/* Main Content */}
       <main className="px-6 py-10 ">
         <div className="text-center">
