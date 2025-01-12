@@ -4,11 +4,12 @@ import Image from "next/image";
 import BookCard from "@/components/BookCard";
 import LoadMoreItems from "@/components/LoadMoreItems";
 import { useState, KeyboardEvent } from "react";
+import { books } from "@/data/booksData";
 
 export default function Home() {
   const [query, setQuery] = useState<string>("");
   const [loading, setLoading] = useState<Boolean>(false);
-  const [response, setResponse] = useState<string[][]>([]);
+  const [response, setResponse] = useState<string[][]>(books);
 
   const processSearch = async (
     event: KeyboardEvent<HTMLInputElement>
@@ -51,12 +52,12 @@ export default function Home() {
       style={{
         background: `linear-gradient(
                       170deg, 
-                      #ffc97e 45%, 
-                      #ffdfa7 45%, 
-                      #ffdfa7 50%, 
-                      #ffefd3 50%, 
-                      #ffefd3 55%, 
-                      #ffffff 55%
+                      #ffc97e 35%, 
+                      #ffdfa7 35%, 
+                      #ffdfa7 40%, 
+                      #ffefd3 40%, 
+                      #ffefd3 45%, 
+                      #ffffff 45%
                       )`,
       }}
     >
@@ -102,7 +103,7 @@ export default function Home() {
         {/* TODO: Ensure that only six cards are displayed at a time, include 
                   a way to navigate between every six books */}
         {/* Stretch Goal: Make the search bar sticky */}
-        <div className="mt-10 py-7">
+        <div className="mt-20 py-10">
           <LoadMoreItems books={response} />
         </div>
       </main>
