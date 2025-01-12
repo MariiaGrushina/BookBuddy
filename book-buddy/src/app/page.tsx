@@ -50,21 +50,21 @@ export default function Home() {
       className="bg-[#ffc97e] min-h-screen"
       style={{
         background: `linear-gradient(
-      170deg, 
-    #ffc97e 45%, 
-    #ffdfa7 45%, 
-    #ffdfa7 50%, 
-    #ffefd3 50%, 
-    #ffefd3 55%, 
-    #ffffff 55%
-    )`,
+                      170deg, 
+                      #ffc97e 45%, 
+                      #ffdfa7 45%, 
+                      #ffdfa7 50%, 
+                      #ffefd3 50%, 
+                      #ffefd3 55%, 
+                      #ffffff 55%
+                      )`,
       }}
     >
       {/* Main Content */}
       <main className="px-6 py-10 ">
         <div className="text-center">
           <p className="text-[#B27F50] text-xs font-bold ">BookBuddy</p>
-          <h1 className="text-3xl font-bold text-[#584A31] py-5">Find Books</h1>
+          <h1 className="text-4xl font-bold text-[#584A31] py-5">Find Books</h1>
           <p className="text-[#B27F50] text-sm">
             Enter the name of any book or a description to find book
             recommendations
