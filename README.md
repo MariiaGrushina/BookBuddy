@@ -3,7 +3,6 @@
 BookBuddy is a web application that enables users to view books that are similar to what they read.
 This is a project created by Mariia Grushina and David Solano.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
