@@ -52,12 +52,12 @@ export default function Home() {
       style={{
         background: `linear-gradient(
                       170deg, 
-                      #ffc97e 35%, 
-                      #ffdfa7 35%, 
-                      #ffdfa7 40%, 
-                      #ffefd3 40%, 
-                      #ffefd3 45%, 
-                      #ffffff 45%
+                      #ffc97e 30%, 
+                      #ffdfa7 30%, 
+                      #ffdfa7 34%, 
+                      #ffefd3 34%, 
+                      #ffefd3 38%, 
+                      #ffffff 38%
                       )`,
       }}
     >
