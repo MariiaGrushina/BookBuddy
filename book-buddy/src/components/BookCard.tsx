@@ -45,7 +45,7 @@ const BookCard: React.FC<BookCardProps> = ({
   }, [bookName, bookAuthor]);
 
   return (
-    <div className="bg-white shadow-md rounded-md overflow-hidden p-4">
+    <div className="bg-white shadow-md hover:shadow-xl rounded-md overflow-hidden p-4">
       <div className="grid justify-center">
         <img
           src={
